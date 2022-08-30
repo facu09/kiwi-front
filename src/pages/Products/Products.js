@@ -2,8 +2,11 @@ import './Products.css';
 import './mediaQProd.css';
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState, useEffect} from 'react';
+//Agrego el uso de axios del componente creado en /src/axios/axios.js
+import { instance } from '../../axios/axios';
 
 import imgPorDefectoProd from '../../Imagenes/ImgKiwiProdGenerico.jpg';
+
 
 
 
@@ -337,9 +340,28 @@ const Products = () => {
        //POR ACA DEPUTAR Y TESTEAR
         console.log (".Entrand a la funcion 'onClickFinalizarCompra' ")
 
-       const payload =  {
-        domicilio: "domicilio falta pedir o tomar del user",                 
-        mobbile: "falta campo o de user" , 
+        //Voy a buscar el Domicilio + Mobbile del  usuario a mi kiwi-back de Ago2022----------------
+        const respons = await instance.get('/users/search?email=' + lsEmail)
+        const jsonUser = respons.data
+        console.log (". onClickFinalizarCompra(): Ya fue a buscar con Axios ruta 'get /users/search?email=' con token del storage que esta guardado en el sotrage, a traves del email")
+        console.log (". Y el Domicilio y Celular del usuario esta acá adentro de este respons.data = json: ", jsonUser)
+                
+        if (jsonUser.domicilio && jsonUser.mobbile ) {
+            //guardo en el localStorage el nombreUsuario   
+            const lsDomicilioUs = jsonUser.domicilio;
+            const lsMobbile = jsonUser.mobbile;
+            console.log (". Acá recuperó Domicilio y Celular '" + lsDomicilioUs + "' y Celular: '" + lsMobbile + "'.")
+        } else{
+            //no debería entrar acá
+            console.log ("Usuario mal cargado: Le Falta 'Domicilio' o 'Telefono' --> Actualizar los Datos de Usuario \nO contactarse con Kiwi y pedir que le Completen los datos Faltantes.");
+            alert("Usuario mal cargado: Le Falta 'Domicilio' o 'Telefono' --> Actualizar los Datos de Usuario \nO contactarse con Kiwi y pedir que le Completen los datos Faltantes.");
+            return //Salgo de la rutina (no hago mas nada ni blanqueo)
+        }
+
+        //Armo el encabezado del Pedido
+        const payload =  {
+        domicilio: jsonUser.domicilio? jsonUser.domicilio  : "Llamar y pedir domicilio.",                 
+        mobbile: jsonUser.mobbile? jsonUser.mobbile : "Cancel Ped.. Ask Cel x Mail" , 
         dscPedido: "DscPedido: habria que agregarlo desde un form ese del pedido.", 
         totalPedido: totalCarrito,
         totalPaga: totalCarrito,
@@ -347,9 +369,9 @@ const Products = () => {
         pedidoDiferido: 0,
         lineasPedido: []
         }
-
         console.log(".Se armo el payload (Encabezado del pedido): ", payload)
-        //2do armo en el Body Lineas
+
+        //2do armo en el Body Lineas: Las Lineas del Pedido ---------------------------
         //Agrego las lineas:
         // const newA =  arrayCarrito.map((p, i) =>  {
         //     //recorro las lineas de carrito y lleno las lineas del pedido
@@ -359,14 +381,15 @@ const Products = () => {
         //     payload.lineasPedido[i].detalles = [{codGusto: 33, cantGusto:1}, {codGusto: 42, cantGusto: 1}];
         //     }
         // )
-
+        //
        let i = 0;
         do {
             console.log("muestro el arrayCarrito[i].codProd: -->", arrayCarrito[i].codProd )
             payload.lineasPedido[i] = { 
                 codProd: arrayCarrito[i].codProd ,
                 cantidad: arrayCarrito[i].quantity,
-                //3ro armo en el Body los Gustos de las lineas
+                //3ro armo en el Body los Gustos de las lineas hardodeados
+                //Falta agregar al kiwi-front el detalle de gutos por cada linea de Pedido  --> proxima iteración
                 detalles: [
                             {codGusto: 33, cantGusto:1}, 
                             {codGusto: 42, cantGusto: 1}
@@ -395,17 +418,14 @@ const Products = () => {
             });
             const json = await response.json();
             console.log(json);
-            // antes
-            // const {message} = json
-            // ahora
             const {message} = json
 
             console.log (". El mensaje devuelto por response.json es: '" + message + "'.")
             
             if (message === "Operación Exitosa: Alta de Pedido en DB") {
-                console.log("Se dio de alta bien el pedido.")
+                console.log("==> Se dio de alta bien el pedido en DB.")
                 //Finalmente le digo Gracia por su compra :-)
-                alert("¡¡ Gracias '" + lsEmail + "' por comprar en KIWI !! \nEl Total de su compra es:     $ " + totalCarrito + ". \nCon un total de  '" + cantTotArticulos + "'  artículos." );
+                alert("¡¡ Gracias '" + lsEmail + "' por elegir KIWI Helados !! \nEl Total de su Pedido es de:   $ " + totalCarrito + ". \nCon un total de  '" + cantTotArticulos + "'  artículos.\n\nNos estaremos comunicando a su celuar para coordinar el envío. \n¡Gracias nuevamente!" );
 
                 //Blanqueo para un proximo pedido:
                 myCart = [];
