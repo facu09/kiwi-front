@@ -21,9 +21,9 @@ const Register = () => {
     // # Back viejo prestado de Juli
     // const baseURL = 'https://back-sandbox.herokuapp.com/api';
     // # Back nuevo de Ago2022
-    //const baseURL = 'https://app-kiwi-backend.herokuapp.com/api'
+    const baseURL = 'https://app-kiwi-backend.herokuapp.com/api'
     //Pruebo Local
-    const baseURL = "http://localhost:3000/api"
+    //const baseURL = "http://localhost:3000/api"
                      
     //Definicioes y vinculos a elementos del DOM para poner foco de ser necesario
     const inpEmail = document.getElementById('email');
