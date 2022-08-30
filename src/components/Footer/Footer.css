@@ -1,0 +1,90 @@
+/*  --------  FOOTER  ---------*/
+footer{
+    padding: 1.5rem;
+    margin-top: 0px;
+    border: 0px;
+    width: 100%;
+    background-color: black;
+    /* height: 10vh; */
+    display: flex;
+    flex-direction: column; /*para que las 2 lineas esten una abajo de la otra*/
+    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    /* Agrego padings para que quede mas elegante */
+    padding-top: 1.5rem;
+    padding-bottom: 0.90rem;
+}
+
+@media (max-width: 455px) {
+    footer{
+      /* Agrego padings para que quede mas elegante */
+     padding-top: 5.5rem;
+     padding-bottom: 1.2rem;
+    }
+ }
+
+.conteiner-linea1-footer{
+    margin: 0%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.container-rosario{
+    /* width: 40%; */
+    display:flex;
+    justify-content:flex-end;
+}
+
+/* .container-icons{
+    width: 40%; 
+}    
+*/
+
+.container-icons i {
+    color: white;
+    font-size: 2em;
+    margin: 0px 10px;
+}
+.icon-facebook{
+    margin-left: 140px;
+}
+.icon-facebook:hover{
+    color: #3b5998;
+    cursor: pointer;
+}
+
+.icon-twitter:hover{
+    color: #1da1f2;
+    cursor: pointer;
+}
+
+.icon-instagram:hover{
+    color: #5851db;
+    cursor: pointer;
+}
+
+
+/* Ya no hace falta porque meti todo en 1 sola linea --> lo logre jugando con los css,
+    Lo resolvi con una clase gral puesta a la etiqueta footer .conteiner-footer-gral{
+        display: flex;
+        flex-direction: column; */
+/* footer2{
+    margin-top: 0px;
+    width: 100%;
+    background-color: black;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.Contenedor-Version{
+    width: 90%;
+    padding-top: 0.4rem;
+    display: flex;
+    color:white;
+    justify-content: flex-end;
+    align-items: initial;
+}

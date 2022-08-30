@@ -1,0 +1,91 @@
+/*********************************/
+/***      MEDIA QUERIES        ***/
+
+/* para Navegadores PC pantallas pequeñas o restauradas */
+@media (min-width: 769px) and (max-width: 1224px) {
+    .Login__Portada_Login{
+           margin-top: 8%;
+           margin-bottom: 7%;
+    }
+    .Login__Card{
+        width: 50%;
+    }    
+    .Login__IniciarSesion{
+        font-size: 1.6rem;
+    }
+    .Login__CamposEntrada{
+        width: 99%;
+        height: 2.7em;
+        font-size: 1.05rem;
+    }
+    .Login__BtnEntrar{
+       height: 2.7em;
+       font-size: 1.1rem;     
+    }
+}
+
+/* para Tablets Ipads  van de 455 a 768px*/
+@media (min-width: 455px) and (max-width:768px) {
+    .Login__Portada_Login{
+        margin-top: 10%;
+        padding: 1% ;
+    }
+    .Login__Card_Login{
+        width: 80%;   
+    }
+    .Login__Card{
+        width: 90%;
+    }
+    .Login__IniciarSesion{
+        font-size: 1.4rem;
+    }
+    .Login__CamposEntrada{
+        width: 99%;
+        height: 2.7em;
+        font-size: 0.95rem;
+    }
+    .Login__BtnEntrar{
+       height: 2.7em;
+       font-size: 1rem;     
+    }
+    .Login__OlvidePass{
+        /* width: 85%; */
+        /*height: 2.4em; */
+        font-size: 0.9rem; 
+    }
+}
+
+/* Para moviles */
+@media (min-width: 0px) and (max-width:454px) {
+    .Login__Portada_Login{
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+    .Login__Card_Login{
+        width: 85%;   
+    }
+    .Login__IniciarSesion p{
+        /* margin-bottom: 30px; */
+        font-size:1.5rem;
+    }
+    .Login__Card{
+        width: 85%;
+    }
+    .Login__CamposEntrada{
+        width: 95%;
+        height: 2.5em;
+        font-size: 0.88rem;
+    }
+    .Login__Etiquetas{
+        width: 90%;
+    }
+    .Login__BtnEntrar{
+       height: 2.6em;
+       font-size: 0.8rem;     
+    }
+    .Login__OlvidePass{
+        width: 85%;
+        height: 2.4em;
+        font-size: 0.8rem; 
+    }
+ }

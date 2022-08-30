@@ -1,0 +1,105 @@
+/*********************************/
+/***      MEDIA QUERIES        ***/
+/* para Navegadores PC pantallas pequeñas o restauradas */
+@media (min-width: 769px) and (max-width: 1920px) {
+    .Prd__{
+        height: 85px; }
+
+    /*Se vanca todo el responsive con el % de card*/
+    /*  porque esta bien hecho con % muchas de las coas */ 
+    .Prd__Card{
+        width: 90%;
+        /* padding: 1.5% 0% 4% 0%; */
+    }    
+    .Prd__CntNuevaCuenta {
+        width: 100%;
+    }
+
+    .Prd__CntNuevaCuenta p{
+        /* margin-top: 15px; */
+        font-size:2rem;
+        width: 100%;
+    }
+    .Prd__portada {
+        margin-top: 2%;
+    }
+    .Prd__principalWrapper {
+        width: 90%;
+        /* padding: 1% 1%; */
+    }    
+}
+
+/* para Tablets Ipads  van de 455 a 768px*/
+@media (min-width: 480px) and (max-width:768px) {
+    .Prd__ImagenCarritoNav{
+        height: 65px; 
+    }
+    .Prd__Card{
+        /* padding: 1.5% 0% 4% 0%; */
+        width: 87%;
+    }
+    .Prd__CntNuevaCuenta {
+        width: 100%;
+    }
+    /* el titulo del fomr */
+    .Prd__CntNuevaCuenta p{
+        /* margin-top: 10px; */
+        font-size:1.7em;
+    }
+    .Prd__FormCuenta label {
+        font-size: 1.1em;
+    }
+    .Prd__CamposEntrada{
+       font-size: 1.05em;
+    }
+    /* para el espacioado de los campos*/
+    .Prd__container-input {
+        margin: 7% 0px;
+    }    
+    .Prd__portada {
+        margin-top: 1%;
+    }
+    .Prd__principalWrapper {
+        width: 85%;
+        /* padding: 5% 1%; */
+    }
+}
+
+/* Para moviles */
+@media (min-width: 0px) and (max-width:480px) {
+    .Prd__ImagenCarritoNav{
+        height: 45px; 
+    }
+    .Prd__portada {
+            margin-top: 1%;
+    }
+    .Prd__Card{
+        padding: 3% 0%;
+        width: 90%;
+    }
+    .Prd__CntNuevaCuenta {
+        width: 100%;
+    }
+    /* el titulo del fomr */
+    .Prd__CntNuevaCuenta p{
+        /* margin-top: 8px; */
+        font-size:1.5rem;
+    }
+    .Prd__FormCuenta label {
+        font-size: 1.04em;
+    }
+    .Prd__CamposEntrada{
+       font-size: 0.87em;
+    }
+    /* para el espacioado de los campos*/
+    .Prd__container-input {
+        margin: 7% 0px;
+    }    
+    .Prd__principalWrapper {
+        width: 90%;
+        padding: 5% 1%;
+    }
+    .Prd__Submit{
+      font-size: 1.26em;     
+    }
+ }

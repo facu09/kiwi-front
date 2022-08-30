@@ -1,0 +1,348 @@
+/* @import url(../../variables.scss); */
+@use '../../variables';
+@import url('../../_base.css');
+
+.body {
+    // background-color: rgb(236, 78, 32);
+    background-color: var(--fondoVerdeKiwi);
+    // background-color: variables.$verde-kiwi;  //FALTA VER ESTO esto no funca ????
+}
+.DivHome{
+        /* PRUEBA DE COLORES*/
+        /* background-color: #0E0E0E;
+        background-color: rgb(236, 78, 32);
+        background-color: white; */
+        /* background-color: rgb(93, 155, 60); */
+        // background-color: varibles.$verde-kiwi;
+        // background-color: var(--fondo-home);
+        background-color: var(--fondoVerdeKiwi);
+        // background-color: violet;
+        // background-color:red;
+        // background-color: rgb(93, 155, 60);
+        margin:0;
+        padding: 0;
+}
+
+//Portada con la foto de Kiwi
+.Portada{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    // height:70vh;
+    height: 70%;
+    background-image:url(../../Imagenes/KiwiHeader.jpg);
+    /* object-fit: cover; */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    /*Comento el justifiy-content para que los h2 vayan arriba*/
+    /* justify-content: center;  */
+    align-items: center;
+} 
+
+.portada-opacidad{
+    width: 100%;
+    // height:70vh;
+    height:100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0,  0.50);
+    animation: AniPortadaOpacidad 1500ms ease-in 0s 1;
+}
+
+
+/* ---------------  SECCIONES --------------------------- */
+/* --------------- Secciones ----------------------*/ 
+/* --------------- Secciones ----------------------*/ 
+.sect-history {
+    /* margin-top: 10px; */
+    /* react modificacion */
+    // margin-top: 400px;
+    margin-top: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-history {
+    width: 70%;
+    border-radius: 20px;
+    /* padding: 2%; */
+    /* padding: 3% 5% 1% 5% ;  lo comento xque en vanilla html  */
+    padding: 0% 5% 2% 5% ;
+   
+    /* Al cambiar a react: cambia la proporcion de espaciado y tamaño de letras  */
+    margin-top: 100px;     /* margin-top: 5.8rem; */
+    /* PRUEBA DE COLORES*/
+    /* background-color: rgba(79, 84, 73, 0.5);
+    background-color: rgb(161, 130, 118,0.5);
+    background-color: rgba(183, 213, 212, 1); */
+    // background-color: rgba(119, 83, 57, 0.9);
+    background-color: var(--color-fondo-cards);
+
+    box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.75);
+    margin-bottom: 0em;
+
+}
+
+.TitleCard {
+    text-align: center;
+     /* PRUEBA DE COLORES*/
+    /* color: #00B0C7; */
+    /* color:rgb(188, 188, 156); */
+    /* color:rgb(172, 174, 172); */
+    /* color: rgb(183, 213, 212); */
+    /* color:rgb(236, 78, 32);
+    color:rgb(208, 110, 134);
+    color:rgb(192, 147, 158);
+    color: rgb(183, 213, 212);
+    color: rgb( 157, 159, 118);
+    color: rgb(35, 53, 35);
+    color: rgb(56, 96, 34);
+    color: rgb(92, 60, 38) ;
+    color: rgb(183, 213, 212); */
+    // color: rgb(255,255,255);
+    color: var(--color-letra-secciones);
+    font-size:  3rem;   /* 4em;*/
+    margin-top: 1.1rem;
+    margin-bottom: 0.7rem;
+    font-weight:bolder;
+    text-shadow: black ;
+    /* text-shadow: -1px -1px 0 #90C347, 1px -1px 0 #90C347, -1px 1px 0 #90C347, 1px 1px 0 #90C347; */
+    /* text-shadow: 3px 3px 0 #0a0a0a, 3px 3px 0 #000000, 1px 1px 0 #000000, 3px 3px 0 #000000; */
+  
+    
+}
+
+.history {
+    font-size: 1rem;  /*1.2rem;*/
+    /* text-align: center; */
+    text-align: justify;
+    /* text-shadow: -1px -1px 0 #90C347, 1px -1px 0 #90C347, -1px 1px 0 #90C347, 1px 1px 0 #90C347; */
+    /* color:rgb(188, 188, 156); */
+    /* color: rgb(79, 93, 59);
+    color: rgb( 119, 83, 57) ; */
+    // color: white;
+    color: var(--color-letra-secciones)
+}
+
+.VerMasHist{
+    text-align: justify;
+    font-size: 1rem;   /* 1.2em; */
+     /* PRUEBA DE COLORES*/
+    /* color: rgb(172, 174, 172);
+    color: rgb(157, 159, 118);
+    color: rgb(183, 213, 212);
+    color:rgb(192, 147, 158); */
+    /* color: rgb(148, 238, 99); */
+    /* color: rgb(93, 155, 60); */
+    color: rgb(144, 148, 148);
+}
+.VerMasHist:hover{
+    cursor: pointer;
+}
+.VerMasHist:hover ::after{
+    cursor: text;
+    content:  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, at? Minus vel magnam  asperiores, deserunt delectus maiores nulla reiciendis in autem, nemo recusandae reprehenderit molestiae quiseaque sit quae neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit.                       Enim, at? Minus vel magnam asperiores, deserunt delectus maiores nulla reiciendis in autem, nemo recusandae reprehenderit molestiae quis eaque sit quae neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, at? Minus vel magnam asperiores, deserunt delectus maiores nulla reiciendis in autem, nemo recusandae reprehenderit molestiae quis eaque sit quae neque.";
+    /* PRUEBA DE COLORES*/
+    /* color: rgb(172, 174, 172); */
+    /* color: rgb(157, 159, 118); */
+    /* color: rgb(183, 213, 212,1); */
+    /* color: rgb(79, 93, 59); */
+    // color: white;
+    color: var(--color-letra-secciones);
+}
+
+/* ----  SECCION PRODUCTOS -----*/
+.SeccionProductos{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.CardProductos{
+    width: 70%;
+    /* height: 80vh; */
+    border-radius: 20px;
+    /*(top, right, bottom left).…*/
+    padding: 1% 5% 4% 5% ;
+    margin-top: 5.8em;
+    /* PRUEBA DE COLORES*/
+    /* background-color: rgba(79, 84, 73, 0.5); */
+    /* background-color: rgba(119, 83, 57, 0.5); */
+    // background-color: rgba(119, 83, 57, 0.9);
+    background-color: var(--color-fondo-cards);
+    box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.75);
+    margin-bottom: 1em;
+    /* display: flex;  ESTO METE LAGS
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center; 
+    align-items: center;  */
+    /* text-align: center;*/
+}
+
+.carousel{
+    margin-top: -9px;
+    z-index: 0;
+}
+
+.ImgCarru{
+    margin-top: 2em;
+    border-radius: 20px;
+    height: 60vh;
+    /* z-index: 0; */  /*no hace falta ya esta bien con el z-index del  carrousel */
+   /* margin-left: 15em; */
+}
+.Img1{
+    /* margin-left: 25%; */
+       /* margin-left: 0%; */     /*con 0% no hace nada --> lo comento*/
+       width: 100%;
+       height: auto;  /*hace que se mantenga el aspecto de ratio */
+}
+
+/* --- Seccion Pedidos */
+.SeccionPedidos{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.CardPedidos{
+    /*CardPedidos es el Marron que contiene todo el titulo y el card del carrucel*/
+    width: 70%;
+     /*(top, right, bottom left).…*/
+    padding: 2% 5% 4% 5% ;
+    /* height: 70vh; */
+    border-radius: 20px;
+    margin-top: 5.8em;
+    /*(top, right, bottom left).…*/
+    /* PRUEBA DE COLORES*/
+    /* background-color: rgba(79, 84, 73, 0.5); */
+    // background-color: rgba(119, 83, 57, 0.9);
+    background-color: var(--color-fondo-cards);
+    box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.75);
+    margin-bottom: 0em;
+    align-items: center;
+    /* ESTO puede que meta LAGS */
+    /* display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center; 
+    align-items: center; 
+    text-align: center; */
+}
+
+.Img1_Dely{
+    /* margin-left: 0%; */     /*con 0% no hace nada --> lo comento*/
+    width: 100%;
+    height: auto;  /*hace que se mantenga el aspecto de ratio */
+}
+
+
+/* --------- Seccion Concato --------- */
+
+.SeccContacto{
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* justify-items: center; */
+    flex-wrap: wrap;
+}
+/* .CardContacto h2 {
+    text-align: center;
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+    font-size: 1.4rem;
+} */
+
+.CardContacto{
+    /* display: flex; */
+    width: 70%;
+    /* Comento el Height para que no desborde el formulario el Card, lo que resuelve el responsive en moviles cuando se achica la pantalla con el teclado*/
+    /* height: 55%; */
+    border-radius: 20px;
+    margin-top: 5.8em;
+    /*(top, right, bottom left).…*/
+    padding:  3% 5% 1% 5% ;
+     /* PRUEBA DE COLORES*/
+    /* background-color: rgba(79, 84, 73, 0.5); */
+    // background-color: rgba(119, 83, 57, 0.9);
+    background-color: var(--color-fondo-cards);
+    box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.75);
+    margin-bottom: 10em;
+}
+.CardContacto label{
+    /* font-family: 'Montserrat','Poppins', sans-serif; */
+    /* PRUEBA DE COLORES*/
+    /* color:rgb(172, 174, 172); */
+    /* color: rgb(183, 213, 212); */
+    // color: white;
+    color: var(--color-letra-secciones);
+    font-size: 1.5em;
+} 
+
+.FormContacto{
+    margin-top: 1.5em;
+    padding:  3% 5% 1% 5% ;
+    font-size: 1em;  /*tamaño letra cajas texto*/
+}
+.container-input{
+    margin: 5% 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* font-size: 1.1em; */ /*uso el del form*/
+}
+.container-input input{
+    width: 75%;
+}
+.container-input input::placeholder {
+    /* color:rgb(175, 175, 175); */
+    color:rgb(107, 104, 104);
+    /* font-size: 0.94em; */
+    font-style: italic;
+  }
+
+.container-input textarea{
+    width: 75%;
+    height: 10vw;
+}
+.container-input textarea::placeholder {
+    /* color:rgb(175, 175, 175); */
+    color:rgb(107, 104, 104);
+    /* font-size: 0.94em; */
+    font-style: italic;
+  }
+.container-btn{
+    border-radius: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.BtnEnviar{
+    width: 10em;
+    height: 2.4em;
+    border-radius: 65px;
+    font-weight:900;
+    // color:rgb(51, 36, 25); 
+    color: var(--color-letra-boton);
+    margin: 3px 10px 3px 10px;
+    border-color: rgb(153, 153, 153);
+    /* PRUEBA DE COLORES*/
+    /* background-color: rgb(177, 179, 176); */
+    // background-color: rgb(134, 170, 115);
+    background-color: var(--color-boton);
+}
+
+.BtnEnviar:hover{
+    // background-color: rgb(77, 128, 49);
+    background-color: var(--color-boton-hover);
+    /* background-color: rgb(169, 216, 144); */
+    // color:white;
+    color: var(--color-letra-boton-hover)
+}

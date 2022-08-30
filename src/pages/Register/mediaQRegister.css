@@ -1,0 +1,76 @@
+/*********************************/
+/***      MEDIA QUERIES        ***/
+
+/* para Navegadores PC pantallas pequeñas o restauradas */
+@media (min-width: 880px) and (max-width: 1224px) {
+    /*Se vanca todo el responsive con el % de card*/
+    /*  porque esta bien hecho con % muchas de las coas */ 
+    .Rgst_Card{
+        width: 75%;
+        /* margin-top: 2.5rem;
+        margin-bottom: 2.5rem; */
+        margin-top: 4%;
+        margin-bottom: 9%;
+    }    
+    .Rgst_CntNuevaCuenta p{
+        font-size:1.6rem;
+    }
+
+}
+
+/* para Tablets Ipads  van de 455 a 768px*/
+@media (min-width: 455px) and (max-width:880px) {
+    .Rgst_Card{
+        width: 80%;
+        /* margin-top: 2.7rem; */
+        /* margin-bottom: 2.7rem; */
+        margin-top: 10%;
+        margin-bottom: 17%;
+    }
+    /* el titulo del fomr */
+    .Rgst_CntNuevaCuenta p{
+        font-size:1.4rem;
+    }
+    .Rgst_FormCuenta label {
+        font-size: 1.1em;
+    }
+    .Rgst_CamposEntrada{
+       font-size: 1.05em;
+    }
+    /* para el espacioado de los campos*/
+    .Rgst_container-input {
+        margin: 4% 0px;
+    }   
+    .Rgst_Submit{
+        font-size: 1.1rem;     
+      } 
+    
+}
+
+/* Para moviles */
+@media (min-width: 0px) and (max-width:454px) {
+    .Rgst_Card{
+        width: 85%;
+        /* margin-top: 2.9rem;
+        margin-bottom: 2.9rem; */
+        margin-top: 17%;
+        margin-bottom: 24%;
+    }
+    /* el titulo del fomr */
+    .Rgst_CntNuevaCuenta p{
+        font-size:1.2rem;
+    }
+    .Rgst_FormCuenta label {
+        font-size: 1.04em;
+    }
+    .Rgst_CamposEntrada{
+       font-size: 0.87em;
+    }
+    /* para el espacioado de los campos*/
+    .Rgst_container-input {
+        margin: 5% 0px;
+    }    
+    .Rgst_Submit{
+      font-size: 0.92rem;     
+    }
+ }

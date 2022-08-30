@@ -1,0 +1,50 @@
+/* sidebar Nav */
+
+.SB__sideBar {
+    position: relative;
+  }
+  
+  .SB__sideBar button {
+    position: fixed;
+    left: 30px;
+    top: 70px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  .SB__menuNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    /* background: darkcyan; */
+    background-color: rgb(0,0,0,0.75); 
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+    z-index: 9;
+  }
+  
+  .SB__menuNav.SB__showMenu {
+    width: 100%;
+  }
+  
+  .SB__sideBar a {
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: #3fffd2;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .SB__menuNav li:first-child {
+    margin-top: 6rem;
+  }
+
+  .SB__menuNav li {
+    color: rgb(200,200,200)
+  }

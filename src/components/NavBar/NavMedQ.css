@@ -1,0 +1,206 @@
+/*********************************/
+/***      MEDIA QUERIES        ***/
+
+/* para Navegadores PC pantallas pequeñas o restauradas */
+@media (min-width: 1024px) {
+    .encabezado{
+        height: 70px; 
+    }
+    .header{
+        min-height: 100vh;
+    }   
+    .logo{
+        /* width: 27%; */
+        width: 70px;
+    }
+    .ImagenLogo{
+         width: 70px; 
+    }
+    
+    .ElementoNav {
+        font-size: 1rem;
+    }    
+    /* si uso el metodo de Franco no hace falta esto */
+    /* .ElementoNav:hover{
+        font-size: 1.3rem;
+    } */
+    .BtnLogin{
+        width: 4.7rem;
+        height: 1.98rem;
+        font-size: 0.93rem;
+    }
+    .SideBar_button{
+        display:none
+    }
+
+}
+
+/* para Tablets Ipads  van de 455 a 768px*/
+/* @media (min-width: 455px) and (max-width:1024px) { */
+@media (min-width: 700px) and (max-width:1024px) {
+    .encabezado{
+        height:42px;
+    }
+    .header{
+        /* min-height: 55vh; */
+    }   
+    .logo{
+        height: 42px;
+        /* width: 20%; */
+    }
+    .ImagenLogo{
+        width: 42px; 
+        margin-left:50%
+    }
+
+   .ARefLogo{
+    width: 70px; 
+    /*2021-06-21: pruebo de meter el logo mas adentrol*/
+    /*margin-left: 10%;*/
+    margin-left:  20%;
+   }
+   .LiQuienesSomos::after {
+        content:"ist.";
+    }
+    .LiProdcutos::after {
+        content:"";
+    }
+    .liPedidos::after{
+        content: ".";
+    }
+    .ElementoNav  {
+        font-size: 0.85rem;
+    } 
+     /* si uso el metodo de Franco no hace falta esto */   
+    /* .ElementoNav:hover{
+        font-size: 1.1rem;
+    } */
+    .BtnLogin{
+        width: 4.4rem;
+        height: 1.98rem;
+        font-size: 0.8rem;
+        padding: 1px 2px 1px 2px; 
+    }
+
+    .SideBar_button {
+        display:none;
+        width: 31px; 
+        height: 31px
+    }
+}
+
+@media (min-width: 454px) and (max-width:700px) {
+    .encabezado{
+        height:42px;
+    }
+    .header{
+        /* min-height: 55vh; */
+    }   
+    .logo{
+        height: 42px;
+        /* width: 20%; */
+    }
+    .ImagenLogo{
+        width: 42px; 
+        margin-left:50%
+    }
+   .ARefLogo{
+    width: 70px; 
+    /*2021-06-21: pruebo de meter el logo mas adentrol*/
+    /*margin-left: 10%;*/
+    margin-left:  20%;
+   }
+   .LiQuienesSomos::after {
+    content:"istoria";
+    }
+    .LiProdcutos::after {
+        content:""
+    }
+    .liPedidos::after{
+        content: "idos";
+    }
+    .ElementoNav {
+        display:none  /* para que no muestre las opciones del navBar estas cuando la resolucion es pequeña*/
+    }
+    .ElementNavQuedan {
+        display:contents
+    }
+    /* si uso el metodo de Franco no hace falta esto */   
+    /* .ElementoNav:hover{
+        font-size: 1.1rem;
+    } */
+    .BtnLogin{
+        width: 4.4rem;
+        height: 1.98rem;
+        font-size: 0.8rem;
+        padding: 1px 2px 1px 2px; 
+    }
+    .SideBar_button {
+        width: 31px; 
+        height: 31px
+    }
+}
+
+/* Para moviles */
+@media (min-width: 0px) and (max-width:454px) {
+   .encabezado{
+       height: 42px;
+   }
+    header{
+        /* min-height: 45vh; */
+    }   
+    .logo{
+        height: 42px;
+        /* width: 15%; */
+    }
+    .ImagenLogo{
+        width: 42px; 
+   }
+   .ARefLogo{
+    width: 90px; 
+    /*2021-06-21: pruebo de meter el logo mas adentrol*/
+    /*margin-left: 10%;*/
+    margin-left:  10%;
+   }
+   /*Intento de hacer un Menu Hamburgesa trucho, va no se*/
+   /* .NavBar {
+       height: 0;
+       width: 0;
+   } */
+   .ElementoNav {
+        /* font-size: 0.75rem; */
+        display:none  /*para que oculte los elementos de esa clase*/
+
+    }    
+    .ElementNavQuedan {
+        display:contents;  /*para que muestre los elementos de esa clase*/
+        font-size: 0.85rem;
+
+    }
+     /* si uso el metodo de Franco no hace falta esto */
+    /* .ElementoNav:hover{
+        font-size: 0.80em;
+    } */
+    .BtnLogin{
+        width: 3.3rem;
+        height: 1.50rem;
+        font-size: 0.70rem;
+        padding: 1px 2px 1px 2px; 
+    }
+    .LiQuienesSomos::after {
+        content:"istoria";
+    }
+    .LiProdcutos::after {
+        content:""
+    }
+    .liPedidos::after{
+        content: "idos";
+    }
+    .SideBar_button {
+        width: 29px; 
+        height: 29px
+    }
+
+ }
+
+ 

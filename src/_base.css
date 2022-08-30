@@ -1,0 +1,21 @@
+:root {
+    --fondo-home-amarillo: yellow;    /* no se usa: es de ejemplo */
+    --fondoVerdeKiwi: rgb(93, 155, 60);
+    --color-letra-secciones: white;
+    --color-fondo-cards:  rgba(119, 83, 57, 0.9);
+    --color-fondo-cards-solido:  rgba(119, 83, 57);
+    --color-boton: rgb(134, 170, 115);
+    --color-boton-hover: rgb(77, 128, 49);
+    /* --color-boton-border: rgb(153, 153, 153); */
+    --color-boton-border: rgb(176, 202, 162);
+    --color-letra-boton: rgb(51, 36, 25); 
+    --color-letra-boton-hover: white;
+    --color-botonComprar: #f7de82;
+    --color-botonComprar-hover: rgb(134, 170, 115);
+    --color-botonComprar-border: #c3b88f; 
+
+    /*Relacionado Productos Disponibles y al Carrito*/
+    --color-letraCardsProductsYPrecios: #0c4ea2;
+    --color-letraCantYNomProdYPrecio: rgb(80, 150, 216);
+}	
+

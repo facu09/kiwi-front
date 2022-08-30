@@ -1,0 +1,210 @@
+@import url('../../_base.css');
+
+* {
+    /* padding: 0px;
+    margin: 0px; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif , cursive;
+}
+
+/* body {
+    background-color: #0E0E0E;
+    background-color: rgb(93, 155, 60);
+    margin:0;
+    padding: 0;
+} */
+
+.Rgst_PortadaPg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* pruebas de width y height*/
+    /* width: 100%;
+    height: 100%; */
+    margin-top: 4%;
+    /* pruebo color de fondo*/
+    /* background-color: red; */
+    /* opacity: 0.90; */
+}
+
+.Rgst_Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    /* saco el height para que tome hasta el final */
+    /* height: 60%; */ 
+    padding: 1% 2% 1% 2%;
+    /* border: solid;
+    border-color:gray; */
+    /* background-color: rgba(79, 84, 73, 0.5);
+    background-color: rgba(119, 83, 57, 0.5); */
+    /* background-color: rgba(119, 83, 57, 0.9); */
+    background-color: var(--color-fondo-cards);
+    
+    border-radius:20px;
+    /* color: green; */
+    box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.75);
+    /* margin-top: 2rem;
+    margin-bottom: 2rem; */
+    margin-top: 1.5%;
+    margin-bottom: 6%;
+}
+
+.Rgst_ImagenUsuario{
+    margin: 0px
+}
+.Rgst_ImagenUsuario img{
+    width: 70px;
+    height: 70px;
+    margin-top: 1px;
+    margin-bottom: 3px;
+}
+
+.Rgst_CntNuevaCuenta{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    margin-bottom: 0.8rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+.Rgst_CntNuevaCuenta p{
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0.01rem;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    /* color:rgb(172, 174, 172);
+    color:rgb(192, 147, 158); */
+    /* color:white; */
+    color: var(--color-letra-secciones);
+    /* la fuente */
+    font-size:1.8rem;
+    font-weight: bold;
+}
+
+.Rgst_FormCuenta{
+    width: 99%;
+    margin-top: 0.1rem;
+    /* margin-top: 1.5em;
+    padding:  3% 5% 1% 5% ; */
+    /* font-size: 1em;  tamaño letra cajas texto */
+}
+
+.Rgst_FormCuenta label {
+    /* font-family: 'Montserrat','Poppins', sans-serif; */
+    /* color de los lavels del FormCuenta */
+    /* color: rgb(172, 174, 172);
+    color: rgb(183, 213, 212); */
+    /* color: white; */
+    color: var(--color-letra-secciones);
+    /* los labels delform */
+    font-size: 1.3rem;
+}
+
+.Rgst_CamposEntrada{
+    /* height: 1.1em; */
+    /* margin-top:1.1em;*/
+    /* arriba, derecha, abajo , izquierda */
+    padding: 0.8% 2.5% 0.6% 2.5%;
+    /* Esto de abajo es lo mismo a lo de arriba */ 
+    /* padding-top: 1.1%;
+    padding-right: 2.5%; 
+    padding-bottom: 0.6%;
+    padding-left: 2.5%; */
+    border-color:rgb(195, 194, 194);
+    border-radius: 0px;
+    font-size: 1.0rem;
+    color:rgb(0, 0, 0)
+}
+.Rgst_container-input label{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.Rgst_container-input{
+    width: 100%;
+    height: 2.1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 2.7% 0px;
+ }
+.Rgst_container-input input{
+    width: 75%;
+}
+
+input::placeholder {
+    /* color:rgb(175, 175, 175); */
+    color:rgb(107, 104, 104);
+    font-size: 0.9em;
+    font-style: italic;
+  }
+ 
+.Rgst_CampoEntradaPass{
+    font-weight:bolder;
+}
+
+.Rgst_DivBotonera{
+    display: flex;
+    flex-direction: row;
+    font-size:0.8em ;
+    /* font-weight: 500; no da bola aca */
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+.Rgst_BotonAlta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:0px;
+    width: 100%;
+    font-weight:900px;
+    /* font-family: sans-serif;
+    border-style: hidden; */
+    /* border-color: grey; */
+    /* border-radius: 10px;
+    border:solid; */
+}
+
+.Rgst_AHref_submit{
+    width: 67%;
+    height: 2em;
+    padding: 1% 7% 1% 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.Rgst_Submit{
+    width: 100%;
+    /* height: 10vh;  manejo el ancho con el padding*/
+    padding: 1% 2% 1% 2%;
+    margin-top: 1em;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    /* font-weight:900 ; */
+    align-items: center;
+    border-radius: 60px;
+    /* color:rgb(88, 61, 42);  
+    color:rgb(51, 36, 25);  */
+    color: var(--color-letra-boton);
+    border-color: var(--color-boton-border);
+    /* background-color: rgba(248, 255, 239, 0.5);
+    background-color: rgba(75, 193, 248, 0.87); */
+    /* background-color: rgb(134, 170, 115); */
+    background-color: var(--color-boton);
+    /* border-style: hidden; */
+}
+.Rgst_Submit:hover{
+    cursor:pointer;
+    /* background-color: rgb(77, 128, 49); */
+    background-color: var(--color-boton-hover);
+    /* color:white; */
+    color: var(--color-letra-boton-hover)
+}
