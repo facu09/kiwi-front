@@ -15,9 +15,9 @@ import imgPorDefectoProd from '../../Imagenes/ImgKiwiProdGenerico.jpg';
 let lsToken = "";
 let lsEmail = "";
 //#29/08 conecto a mi kiwi-back local para testear
-const baseURL = "https://back-sandbox.herokuapp.com/api";
+//const baseURL = "https://back-sandbox.herokuapp.com/api";
 //const baseURL = "http://localhost:3000/api";
-
+const baseURL = "https://app-kiwi-backend.herokuapp.com/api"
 
 // alert ("Componente Productos: 0- ejecución previa.")
 console.log ("Componente Productos: 0- ejecución previa.")

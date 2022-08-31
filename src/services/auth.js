@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const login = ({ email, password }) => {
-    
+
+const baseURL = "https://app-kiwi-backend.herokuapp.com/api"
     // antes de usar axios el fetch manual----------------
     // return fetch ('http://reqres.in/api/login', {
     //     method: 'POST',
@@ -17,7 +18,7 @@ export const login = ({ email, password }) => {
     //     password
     // });
 
-    return axios.post('https://back-sandbox.herokuapp.com/api/auth/login', {
+    return axios.post(baseURL + "/auth/login", {
         email, 
         password
     });
