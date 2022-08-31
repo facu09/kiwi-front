@@ -91,7 +91,7 @@ const Products = () => {
             // // const response = await fetch(`${baseURL}/products?limit=15&offset=6`, { // traigo los 15 primeros productos salteando los 6 primeros
             // const response = await fetch(`${baseURL}/products?limit=15&offset=5`, {   //original: traigo los 9 
             //     productos, empezando del 5to 
-            //     method: 'GET',
+            //     method: 'get',
             //     headers: {
             //         'Authorization': `Bearer ${lsToken}`
             //     }

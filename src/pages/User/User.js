@@ -57,7 +57,7 @@ const User = () => {
         try{
             // Backup para ver cuantas lineas es Fetch Comun!!
             // const response = await fetch('https://back-sandbox.herokuapp.com/api/user', {
-            //     method: 'GET',
+            //     method: 'get',
             //     headers: {
             //         // Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDE0YTc2ZDk5YmM3MDM5NDU1OGU1OCIsImlhdCI6MTYzMDU1MDI4OH0.APYZUEhrg1OQeXcsOzWdEeqMpwkvIJ5yBqPe0IzI378"
             //         Authorization: "Bearer " + token
