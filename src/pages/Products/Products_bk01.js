@@ -63,11 +63,12 @@ const Products = () => {
                 method: 'get',
                 headers: {
                     'Authorization': `Bearer ${lsToken}`
-                }
+                } 
             });
-
             const json = await response.json();  //recupero lo que devuelve el Get del Fetch
            
+            //Parece que el anterior "GET" no le gustaba a Vercel
+
             // consolo log para ver que mierda pasaba
             // --> no andaba el estado, hasta que comenté el alert
             // // console.log ("Consolog de Json del getProductos")

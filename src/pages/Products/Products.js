@@ -106,6 +106,7 @@ const Products = () => {
             console.log(". Consologueo el json recien recuperado del back: abajo --> ")
             console.log(json)
 
+            //#31/08/2022: Parece que el anterior GET no le gustaba a Vercel pruebo con "get"
             // consolo log para ver que mierda pasaba
             // --> no andaba el estado, hasta que comenté el alert
             // // console.log ("Consolog de Json del getProductos")
