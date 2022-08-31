@@ -11,10 +11,9 @@ import imgDelivery2 from '../../Imagenes/Delivery2.jpg'
 import imgDelivery3 from '../../Imagenes/Delivery3.jpg'
 import imgDelivery1 from '../../Imagenes/Delivery1.jpg';
 
-// #31/08/22 estoy quitando los carruseles para probar que compile
-// //importo Carrusel de Bootstrap y el css correspondiente general de bootstrap
-// import Carousel from 'react-bootstrap/Carousel'
-// import 'bootstrap/dist/css/bootstrap.min.css'; //el estilo en cascada para que funcionen los componentes
+//importo Carrusel de Bootstrap y el css correspondiente general de bootstrap
+import Carousel from 'react-bootstrap/Carousel'
+import 'bootstrap/dist/css/bootstrap.min.css'; //el estilo en cascada para que funcionen los componentes
 
 import { useState, useEffect } from 'react';
 import Toast from '../../components/Toast/Toast'  //Componente para usar un Toast arriba a la derecha
@@ -101,19 +100,121 @@ const Home = () => {
                             import 'bootstrap/dist/css/bootstrap.min.css';
                         */}
                         
-                        {/* Aca el 31/08/22 volé el carrousel de bootstrap que daba problemas quedo backup en Home_bk31Ago22.js */}
-                        {/* Agrego una imagen fija de 1 producto */}
-                        <img src={imgChocoHelado} alt="ImagenProducto"/>
+                        <Carousel fade>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-70 ImgCarru Img1"
+                            // src="holder.js/800x400?text=First slide&bg=373940"
+                            src={imgChocoHelado} 
+                            // <img className="ImagenLogo" src={logoKiwi} alt="LogoKiwi"/>    
+                            alt="First slide"
+                            />
+                            <Carousel.Caption>
+                            {/* <h3>First slide label</h3> */}
+                            {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w70 ImgCarru Img1"
+                            // src="holder.js/800x400?text=Second slide&bg=282c34"
+                            src= {imgTorta1}
+                            alt="Second slide"
+                            />
+                            <Carousel.Caption>
+                            {/* <h3>Second slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-70 ImgCarru Img1"
+                            // src="holder.js/800x400?text=Third slide&bg=20232a"
+                           src={imgBombon1}
+                            alt="Third slide"
+                            />
+                            <Carousel.Caption>
+                            {/* <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        </Carousel>
 
+
+                        {/* Viejo de bootstrap de vanilla ----------------------*/}
+                        {/* <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <img src="./Imagenes/Kiwi_ChocoHelado.jpg" className="d-block  ImgCarru Img1" alt="Bombon Chocolate"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img src={"./Imagenes/Kiwi_Torta1.jpg"} className="d-block ImgCarru Img1" alt="Torata Helada Kiwi"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img src="./Imagenes/Kiwi_bombon1.jpg" className="d-block ImgCarru Img3" alt="Torata Helada Kiwi"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img src="./Imagenes/KiwiPromo1.jpg" className="d-block ImgCarru Img1" alt="Torata Helada Kiwi"/>
+                            </div>
+                            <div className="carousel-item">
+                                <img src="./Imagenes/Delivery1.jpg" className="d-block  ImgCarru Img2" alt="Delivery"/>
+                            </div>
+                            </div>
+                            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
+                            </button>
+                            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
+                            </button>
+                        </div> */}
                     </div>
                 </section>
 
                 <section className="SeccionPedidos" id="Pedidos">
                     <div className="CardPedidos">
                         <h2 className= "TitleCard">Pedidos</h2>
-                           {/* Aca el 31/08/22 volé el carrousel de bootstrap que daba problemas quedo backup en Home_bk31Ago22.js */}
-                            {/* Agrego una imagen fija de 1 producto */}
-                            <img src={imgDelivery2} alt="ImagenProducto"/>
+                    
+                        <Carousel fade>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-70 ImgCarru Img1_Dely"
+                            // src="holder.js/800x400?text=First slide&bg=373940"
+                            src={imgDelivery2} 
+                            // <img className="ImagenLogo" src={logoKiwi} alt="LogoKiwi"/>    
+                            alt="First slide"
+                            />
+                            <Carousel.Caption>
+                            {/* <h3>First slide label</h3> */}
+                            {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w70 ImgCarru Img1_Dely"
+                            // src="holder.js/800x400?text=Second slide&bg=282c34"
+                            src= {imgDelivery3}
+                            alt="Second slide"
+                            />
+                            <Carousel.Caption>
+                            {/* <h3>Second slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                            className="d-block w-70 ImgCarru Img1_Dely"
+                            // src="holder.js/800x400?text=Third slide&bg=20232a"
+                           src={imgDelivery1}
+                            alt="Third slide"
+                            />
+                            <Carousel.Caption>
+                            {/* <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        </Carousel>    
 
                     </div>
                 </section>
