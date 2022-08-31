@@ -98,7 +98,7 @@ const Products = () => {
             // });
             //# 29/08/2022 Get publico de mi kiwi-back (no requiere token)
             const response = await fetch(`${baseURL}/productos`, {   
-                    method: 'GET'
+                    method: 'get'
                 });
 
             const json = await response.json();  //recupero lo que devuelve el Get del Fetch
