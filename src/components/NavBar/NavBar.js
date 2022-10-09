@@ -277,9 +277,9 @@ const NavBar = () => {
                                     <img className="ImagenCarritoNav"  src={imgCarri} alt="Carrito"/>
                                 </li>
                             </a>
-                            <li>
+                            {/* <li>
                                 <p clasclassNames="ElementoNavUsuario" id="cantUnidadesCarrito">($ 0 )</p>
-                            </li>
+                            </li> */}
                         </div>
                         {/* Fin Agrego la imagen del carrito con cuanto lleva gastado */}
                         <li>
