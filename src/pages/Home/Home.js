@@ -30,7 +30,7 @@ const Home = () => {
 
     useEffect(() => {
         //Por ahora meto alert con la funcionalidad a evaluar, luego metere una especie de Toast
-        alert ("¡¡ Bienvenido a 'Kiwi Tiendas' Corriendo FrontAgo2022 Localmente !! \n Usted podrá: \n1- Iniciar sesión.\n2- Registrarse (Crear una cuenta). \n3- Comprar (requerie tener cuenta e inicio de sesión). \n4- La tienda conservará el carrito con su posible compra para cada usuario mientras no cierren el navegador, pudiendo navegar por el sitio e incluso cambiar de usuario sin perder el mismo. \n** Este aviso esta puesto para que pueda ser evaluada toda la funcionalidad");
+        alert ("¡¡ Bienvenido a 'Kiwi Tiendas' !! (Versión 4.3 - Oct2022) \n Usted podrá: \n1- Iniciar sesión.\n2- Registrarse (Crear una cuenta). \n3- Comprar (requerie tener cuenta y haber iniciado sesión). \n4- La tienda conservará el carrito con su posible compra para cada usuario mientras no cierren el navegador, pudiendo navegar por el sitio e incluso cambiar de usuario sin perder el mismo. \n5- Ver el último pedido realizado por el usuario para repedirlo incluso pudiéndolo modificar. \n\n** Este aviso esta puesto para que pueda ser evaluada toda la funcionalidad");
         
         // setMensajeAviso("¡¡ Bienvenido a 'Kiwi Tiendas' !! \n Usted podrá: \n1- Iniciar sesión.\n2- Registrarse (Crear una cuenta). \n3- Comprar (requerie tener cuenta e inicio de sesión). \n4- La tienda conservará el carrito con su posible compra para cada usuario mientras no cierren el navegador, pudiendo navegar por el sitio e incluso cambiar de usuario sin perder el mismo. \n** Este aviso esta puesto para que pueda ser evaluada toda la funcionalidad")
        

@@ -355,11 +355,28 @@ const Products = () => {
         console.log(json)
 
         //Si tiene pedidos.
+        //Tengo que poner los elementos devuelvo por json de las lineasPedido
         json.lineasPedido.forEach(element => {
-            
-        }); 
-        //Tengo que poner los elementos devuelvo por json
+            //Armo el elemoento del arreglo myCart
+            const productToCart = {
+                // img: pObjProd.photo, 
+                img: imgPorDefectoProd,  // Falta el tratamiento de imagenes de la DB
+                name: element.nomProd,
+                price: element.precioUnit,
+                codProd: element.codProd,
+                quantity: element.cantidad
+            };
+            // agrego el producto nuevo en el carrito
+            myCart.push(productToCart);
 
+        }); 
+        
+        //Finalmente calculo el total
+        CalculaTotalCarrito();
+        setArrayCarrito(myCart);  //==> esto deberia hacer que renderice el componente de nuevo 
+       
+
+        // A borrar 
         // En este formato
         // const productToCart = {
         //     // img: pObjProd.photo, 
