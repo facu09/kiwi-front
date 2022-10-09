@@ -490,11 +490,11 @@
 
 .Prd__Submit{
     /* como ahora hay un solo botón de volver le doy un 50% de ancho, antes con 2 botones le daba un 100% */
-    width: 90%;
+    width: 80%;
     /* height: 10vh;  manejo el ancho con el padding*/
-    padding: 5% 2% 5% 2%;
+    padding: 3% 2% 3% 2%;
     margin-top: 1em;
-    margin-bottom: 2rem;
+    margin-bottom: 1em;
     font-size: 1.5em; 
     font-weight: bold; 
     /* font-weight:900 ; */
@@ -510,6 +510,11 @@
     background-color: var(--color-boton);
     /* border-style: hidden; */
 }
+@media (max-width: 480px) {
+  .Prd__Submit {
+       width: 100%;
+       font-size: 0.4em;  } }
+
 .Prd__Submit:hover{
     cursor:pointer;
     background-color: var( --color-boton-hover);

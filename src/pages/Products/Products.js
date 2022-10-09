@@ -335,6 +335,55 @@ const Products = () => {
         
     }
 
+    
+    const onClickVerUltimaPedido = async () =>  {
+        
+        //# 09/10/2022 Get publico de mi kiwi-back (requiere token)
+        //  const response = await fetch(`${baseURL}/productos`, {   
+        //     method: 'get'
+        // });
+       
+        const response = await fetch(baseURL + '/pedidos/lastPedidoJson/', {
+            method:'GET',
+            headers: {'Authorization': `Bearer ${lsToken}`
+                     },
+        });
+    
+        const json = await response.json();  //recupero lo que devuelve el Get del Fetch
+    
+        console.log(". Consologueo el json recien recuperado del back: abajo --> ")
+        console.log(json)
+
+        //Si tiene pedidos.
+        json.lineasPedido.forEach(element => {
+            
+        }); 
+        //Tengo que poner los elementos devuelvo por json
+
+        // En este formato
+        // const productToCart = {
+        //     // img: pObjProd.photo, 
+        //     img: imgPorDefectoProd,  // Falta el tratamiento de imagenes de la DB
+        //     name: pObjProd.nomProd,
+        //     price: pObjProd.precioUnitFinal,
+        //     codProd: pCodProd,
+        //     quantity:1
+        // };
+        // // agrego el producto nuevo en el carrito
+        // myCart.push(productToCart);
+        
+        // //Finalmente calculo el total
+        // CalculaTotalCarrito();
+
+        
+        //Blanqueo para un proximo pedido:
+        //Sino tiene ultimo pedido, lo dejo como esta
+        
+
+
+    }
+
+
     const onClickFinalizarCompra = async () =>  {
         //El cliente esta finalizando la compra ==> o el Pedido
        //1ero armo el Body.Encabezado del Pedido
@@ -472,6 +521,17 @@ const Products = () => {
             {/* <!-- <div className="Prd__ImagenUsuario">
                 <img src="/Imagenes/LogoAlternativo.jpg" alt="Kiwi Mercado">
             </div> --> */}
+
+            <div className="Prd__DivBotonera">
+                <div className="Prd__BotonAlta">
+                    <a className="Prd__AHref_Submit" href="#cartList">
+                        <button className="Prd__Submit" type="submit"  onClick={() => onClickVerUltimaPedido()} >
+                             <ins>V</ins>er Último Pedido
+                        </button>
+                    </a>
+                </div>
+            </div>
+
             <div className="Prd__CntNuevaCuenta">
                 <p>Productos Disponibles:</p>
                 
@@ -569,7 +629,8 @@ const Products = () => {
                                 </span>
                             </div>
                             <button id='btnFinalizarCompra' 
-                                    onClick={() => onClickFinalizarCompra()} >Finalizar Pedido</button>
+                                    onClick={() => onClickFinalizarCompra()} >Finalizar Pedido
+                            </button>
                         </div>
                     </div>
                 </section>
