@@ -228,9 +228,9 @@ const NavBar = () => {
                                     <img className="ImagenCarritoNav"  src={imgCarri} alt="Carrito"/>
                                 </li>
                             </a>
-                            <li>
+                            {/* <li>
                                 <p className="ElementoNavUsuario" id="cantUnidadesCarrito">($ 0 )</p>
-                            </li>
+                            </li> */}
                         </div>
 
                         <li><button id="btnLogin" className="BtnLogin" onClick={() => onClickLoginLogout()} accessKey="l" > {btnLogInOut}</button></li> 

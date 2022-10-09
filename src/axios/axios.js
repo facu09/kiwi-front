@@ -9,8 +9,10 @@ const instance = axios.create({
     //# Cambio Version Ago2022 - kiwi-front
     //# Apunto a mi BackEnd del Ago2022 de Trabajo integrador FinalFinal
     baseURL: 'https://app-kiwi-backend.herokuapp.com/api',
-            //https://app-kiwi-backend.herokuapp.com/api/gustos  --> esto esta andando
-    //baseURL: 'http://localhost:3000/api',
+    
+    //Testing Backend function ok - URL:
+    //  https://app-kiwi-backend.herokuapp.com/api/gustos  --> esto esta andando
+    //  baseURL Local: 'http://localhost:3000/api',
 });
 
 console.log(". Estoy entrando al objeto axios, por poner el token en 'headers.Authorization'. El token es:", localStorage.getItem('token'))
