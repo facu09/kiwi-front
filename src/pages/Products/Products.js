@@ -606,6 +606,18 @@ const Products = () => {
                 {/* SECCION DEL CARRITO: LO QUE ESTA COMPRANDO EL USUARIO LOGUEADO */}
                 <section className="Prd__cartList" id="cartList">
                     <div className="Prd__principalWrapper">
+                        
+                        {/* Agrego acá tambien el botón para traer el último pedido */}
+                        <div className="Prd__DivBotonera">
+                            <div className="Prd__BotonAlta">
+                                <a className="Prd__AHref_Submit" href="#cartList">
+                                    <button className="Prd__Submit" type="submit"  onClick={() => onClickVerUltimaPedido()} >
+                                        <ins>V</ins>er Último Pedido
+                                    </button>
+                                </a>
+                            </div>
+                        </div>   
+                        
                         <h2>Productos que están en el Carrito:</h2>
                         {/* <!-- <p>
                             Estaría piola en el navbar, tipo sidebar se abra... <br>
