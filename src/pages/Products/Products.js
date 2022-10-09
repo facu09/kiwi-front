@@ -355,6 +355,8 @@ const Products = () => {
         console.log(json)
 
         //Si tiene pedidos.
+        //Primero blanqueo el carrito actual para no superponer
+        myCart = []
         //Tengo que poner los elementos devuelvo por json de las lineasPedido
         json.lineasPedido.forEach(element => {
             //Armo el elemoento del arreglo myCart
