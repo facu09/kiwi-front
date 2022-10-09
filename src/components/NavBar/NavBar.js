@@ -53,9 +53,9 @@ const NavBar = () => {
         console.log ("NavBar: 1- Tiene token y es: " + lsToken)
         // --> Pongo el mail del usuario y el boton de 'Logout'
         if ((lsNomUsuario) && (lsNomUsuario !== "")) {
-            lsLblUsMostrar = "(" + lsNomUsuario + ")";
+            lsLblUsMostrar = "(" + lsNomUsuario.substring(0,10) + ")";
         } else {
-            lsLblUsMostrar = "(" + lsEmail + ")";
+            lsLblUsMostrar = "(" + lsEmail.substring(0,10) + ")";
         }
         lsLblBotonLogInOut = "Logout";  //seteo el botón 'Login/Logout' para que se deslogue
     } else {
