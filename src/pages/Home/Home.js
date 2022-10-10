@@ -19,8 +19,6 @@ import imgDelivery1 from '../../Imagenes/Delivery1.jpg';
 import { useState, useEffect } from 'react';
 import Toast from '../../components/Toast/Toast'  //Componente para usar un Toast arriba a la derecha
 
- // SE MUESTRAN 3 VECES 
-//  alert ("¡¡ Bienvenido a 'Kiwi Tiendas' !! \n Usted podrá: \n1- Iniciar sesión.\n2- Registrarse. \n3- Comprar (Sección 'Productos' - requerie inicio de sesiòn). \n4- Agregar productos nuevos a la tienda (desde 'Sección Productos'). \n5- La tienda conservará el carrito con su posible compra para cada usuario mientras no cierren el navegador, pudiendo navegar por el sitio e incluso cambiar de usuario sin perder el mismo. \n** Este aviso esta puesto para que pueda ser evaluada toda la funcionalidad");
 
 const Home = () => {
 
