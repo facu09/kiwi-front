@@ -303,7 +303,7 @@ const Products = () => {
             //Armo copia local del Estado del Arreglo del Carrito, xque no puedo laburar sobre el estado
             
             
-            if (laCarrito[pIndex].quantity >= 1) {
+            if (laCarrito[pIndex].quantity >= 2) {
                 laCarrito[pIndex].quantity-- }
             else {
                 // llego a cero ==> entonces lo elimino del arreglo y del carrito
@@ -574,7 +574,12 @@ const Products = () => {
                                         <div>
                                             {/* <img src="./assets/img/squirtle.png" alt="Squirtle"/> */}
                                             {/* <img width="80px" height="80px" src={p.photo} alt="Squirtle"/> */}
-                                            <img width="80px" height="80px" src={imgPorDefectoProd} alt="Squirtle"/>
+                                            {/* <img width="80px" height="80px" src={imgPorDefectoProd} alt="Squirtle"/> */}
+                                             {/* 30/10/22: Pongo condicional la imagen s/ el valor de REACT_APP_SHOW_PROD_IMG */}
+                                             {(-1)  &&   
+                                                <img width="80px" height="80px" src={"../assets/images/products/" + p.codProd + ".jpg"} alt="Producto"/> 
+                                            }
+
                                         </div>
                                         {/* <span>{p.name}</span> */}
                                         <span>{p.nomProd}</span>
@@ -632,8 +637,15 @@ const Products = () => {
                                     <div key={i} className="Prd__cart-item">
                                         <div className="Prd__cart-item-content">
                                             <div>
-                                                <img className="Prd__Img-Prod-Carri" 
-                                                     src={p.img} alt={p.name}/>
+                                                {/* <img className="Prd__Img-Prod-Carri" 
+                                                     src={p.img} alt={p.name}/> */}
+                                                {/* 30/10/22: Pongo condicional la imagen s/ el valor de REACT_APP_SHOW_PROD_IMG */}
+                                                {(-1)  &&   
+                                                     <img className="Prd__Img-Prod-Carri" 
+                                                     src={"../assets/images/products/" + p.codProd + ".jpg"} alt={"Producto"}
+                                                    /> 
+                                                }
+
                                             </div>
                                             <span className="Prd__Cantidad"> {`x ${p.quantity} u.`}</span>
                                             <button className='Prd__BtnAdd' onClick={() => onClickAdd1(i)}>+</button>
