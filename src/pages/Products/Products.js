@@ -337,69 +337,62 @@ const Products = () => {
 
     
     const onClickVerUltimaPedido = async () =>  {
-        
-        //# 09/10/2022 Get publico de mi kiwi-back (requiere token)
-        //  const response = await fetch(`${baseURL}/productos`, {   
-        //     method: 'get'
-        // });
-       
-        const response = await fetch(baseURL + '/pedidos/lastPedidoJson/', {
-            method:'GET',
-            headers: {'Authorization': `Bearer ${lsToken}`
-                     },
-        });
+        try {   
+            //# 09/10/2022 Get publico de mi kiwi-back (requiere token)
+            //  const response = await fetch(`${baseURL}/productos`, {   
+            //     method: 'get'
+            // });
+            
+            console.log(". ENTRO AL CLICK DE VER ULTIMO PEDIDO d: ===============> ")
     
-        const json = await response.json();  //recupero lo que devuelve el Get del Fetch
+            const response = await fetch(baseURL + '/pedidos/lastPedidoJson/', {
+                method:'GET',
+                headers: {'Authorization': `Bearer ${lsToken}`
+                        },
+            });
+            
+            const json = await response.json();  //recupero lo que devuelve el Get del Fetch
+        
+            console.log(". Consologueo el json recien recuperado del back: abajo --> ")
+            console.log(json)
     
-        console.log(". Consologueo el json recien recuperado del back: abajo --> ")
-        console.log(json)
-
-        //Si tiene pedidos.
-        //Primero blanqueo el carrito actual para no superponer
-        myCart = []
-        //Tengo que poner los elementos devuelvo por json de las lineasPedido
-        json.lineasPedido.forEach(element => {
-            //Armo el elemoento del arreglo myCart
-            const productToCart = {
-                // img: pObjProd.photo, 
-                img: imgPorDefectoProd,  // Falta el tratamiento de imagenes de la DB
-                name: element.nomProd,
-                price: element.precioUnit,
-                codProd: element.codProd,
-                quantity: element.cantidad
-            };
-            // agrego el producto nuevo en el carrito
-            myCart.push(productToCart);
-
-        }); 
+            //Si no tiene ningun pedido aun registrado o se borraron
+            if (json.code === 401) {
+                console.log ( json.code)
+                alert ("No se registran pedidos en los últimos 15 dias.");
+                return  //salgo de boton ->  "Ver Ultimo Pedido"
+            }
+    
+            //Si tiene pedidos.
+            //Primero blanqueo el carrito actual para no superponer
+            myCart = []
+            //Tengo que poner los elementos devuelvo por json de las lineasPedido
+            json.lineasPedido.forEach(element => {
+                //Armo el elemoento del arreglo myCart
+                const productToCart = {
+                    // img: pObjProd.photo, 
+                    img: imgPorDefectoProd,  // Falta el tratamiento de imagenes de la DB
+                    name: element.nomProd,
+                    price: element.precioUnit,
+                    codProd: element.codProd,
+                    quantity: element.cantidad
+                };
+                // agrego el producto nuevo en el carrito
+                myCart.push(productToCart);
+    
+            }); 
+            
+            console.log ("ACA VOY A MOSTRAR EL Array myCart del ultimo Pedido --------------> ")
+            //Finalmente calculo el total
+            CalculaTotalCarrito();
+            setArrayCarrito(myCart);  //==> esto deberia hacer que renderice el componente de nuevo 
         
-        //Finalmente calculo el total
-        CalculaTotalCarrito();
-        setArrayCarrito(myCart);  //==> esto deberia hacer que renderice el componente de nuevo 
-       
-
-        // A borrar 
-        // En este formato
-        // const productToCart = {
-        //     // img: pObjProd.photo, 
-        //     img: imgPorDefectoProd,  // Falta el tratamiento de imagenes de la DB
-        //     name: pObjProd.nomProd,
-        //     price: pObjProd.precioUnitFinal,
-        //     codProd: pCodProd,
-        //     quantity:1
-        // };
-        // // agrego el producto nuevo en el carrito
-        // myCart.push(productToCart);
-        
-        // //Finalmente calculo el total
-        // CalculaTotalCarrito();
-
-        
-        //Blanqueo para un proximo pedido:
-        //Sino tiene ultimo pedido, lo dejo como esta
-        
-
-
+        } catch (error) {
+            console.log("Esta salindon por el error de try catch del 'onClickVerUltimaPedido': tiro 400 ")
+            
+            console.log(error);
+            throw new Error(error);
+        } 
     }
 
 
