@@ -343,6 +343,9 @@ const Products = () => {
             //     method: 'get'
             // });
             
+            //cambio el puntero del mouse a reloj de arena
+            document.body.style.cursor='wait';
+            
             console.log(". ENTRO AL CLICK DE VER ULTIMO PEDIDO d: ===============> ")
     
             const response = await fetch(baseURL + '/pedidos/lastPedidoJson/', {
@@ -360,6 +363,8 @@ const Products = () => {
             if (json.code === 401) {
                 console.log ( json.code)
                 alert ("No se registran pedidos en los últimos 15 dias.");
+                 //vuelvo el curso a flecha default
+                document.body.style.cursor='default';
                 return  //salgo de boton ->  "Ver Ultimo Pedido"
             }
     
@@ -386,10 +391,14 @@ const Products = () => {
             //Finalmente calculo el total
             CalculaTotalCarrito();
             setArrayCarrito(myCart);  //==> esto deberia hacer que renderice el componente de nuevo 
+
+            //vuelvo el curso a flecha default
+            document.body.style.cursor='default';
         
         } catch (error) {
+            //vuelvo el curso a flecha default
+            document.body.style.cursor='default';
             console.log("Esta salindon por el error de try catch del 'onClickVerUltimaPedido': tiro 400 ")
-            
             console.log(error);
             throw new Error(error);
         } 
@@ -397,9 +406,18 @@ const Products = () => {
 
 
     const onClickFinalizarCompra = async () =>  {
+        //Validaciones Previas
+        if (arrayCarrito.length === 0) {
+            alert ("No hay ningún Producto agregado al Carrito!! \nAgregá Productos al Carrito y volvé a intentar.")
+            return
+        }
+    
+        //cambio el puntero del mouse a reloj de arena
+        document.body.style.cursor='wait';
+
         //El cliente esta finalizando la compra ==> o el Pedido
        //1ero armo el Body.Encabezado del Pedido
-       //POR ACA DEPUTAR Y TESTEAR
+
         console.log (".Entrand a la funcion 'onClickFinalizarCompra' ")
 
         //Voy a buscar el Domicilio + Mobbile del  usuario a mi kiwi-back de Ago2022----------------
@@ -417,6 +435,8 @@ const Products = () => {
             //no debería entrar acá
             console.log ("Usuario mal cargado: Le Falta 'Domicilio' o 'Telefono' --> Actualizar los Datos de Usuario \nO contactarse con Kiwi y pedir que le Completen los datos Faltantes.");
             alert("Usuario mal cargado: Le Falta 'Domicilio' o 'Telefono' --> Actualizar los Datos de Usuario \nO contactarse con Kiwi y pedir que le Completen los datos Faltantes.");
+             //cambio el puntero del mouse a flecha comun
+             document.body.style.cursor='default';
             return //Salgo de la rutina (no hago mas nada ni blanqueo)
         }
 
@@ -433,17 +453,6 @@ const Products = () => {
         }
         console.log(".Se armo el payload (Encabezado del pedido): ", payload)
 
-        //2do armo en el Body Lineas: Las Lineas del Pedido ---------------------------
-        //Agrego las lineas:
-        // const newA =  arrayCarrito.map((p, i) =>  {
-        //     //recorro las lineas de carrito y lleno las lineas del pedido
-        //     payload.lineasPedido[i].codProd = p.codProd;
-        //     payload.lineasPedido[i].cantidad = p.quantity;
-        //     //3ro armo en el Body los Gustos de las lineas
-        //     payload.lineasPedido[i].detalles = [{codGusto: 33, cantGusto:1}, {codGusto: 42, cantGusto: 1}];
-        //     }
-        // )
-        //
        let i = 0;
         do {
             console.log("muestro el arrayCarrito[i].codProd: -->", arrayCarrito[i].codProd )
@@ -499,12 +508,16 @@ const Products = () => {
                 localStorage.removeItem("myCart" + lsEmail, myCart);
 
             } else {
-                console.log("NO se dio de alta bien el pedido")
-                //Finalmente le digo Gracia por su compra :-)
-                alert("¡¡ Gracias '" + lsEmail + "' por comprar en KIWI !! \nEl Total de su compra es:     $ " + totalCarrito + ". \nCon un total de  '" + cantTotArticulos + "'  artículos." );
+                console.log(" ===> Conclusión del Front ==> NO se dio de alta el pedido")
+                alert("¡¡ Atención '" + lsEmail + "' no se ha podido dar de Alta el Pedido !! \nPor Favor intentelo nuevamente, \nó comuníquese telefónicamente para dar de alta su pedido." );
             }
 
+            //Pongo en flecha default el mouse 
+            document.body.style.cursor='default';
+
         } catch (error) {
+            //Pongo en flecha default el mouse 
+            document.body.style.cursor='default';
             alert('Componente Register: Catch Error: ', error);
         }
     }
@@ -523,7 +536,6 @@ const Products = () => {
 
     }, []); 
     // con el ", [])": --> se va a ejecutar 1 sola vez al principio
-
 
 
     return (
